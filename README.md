@@ -8,9 +8,31 @@ Now you can  edit and run your digital circuit simulation designs online on PCs,
 phones, smart TVs and e-book readers without any installation. You can use **BrainBox** in the office, 
 classroom or at home and connect even your RaspberryPi to drive real physical devices.
 
-**Test the program on http://www.brainbox-demo.de**
 
 
+**2022 03 05**
+
+** purpose **
+I juste want understand how it's work
+show the application
+
+
+Test the program on http://www.brainbox-demo.de**
+Not work.
+
+Try to build from source
+Many errors, start with the npm install.
+Maybe , it's link to OsX, i don't know
+
+I change the package.json
+I remove 3 dependencies.
+
+I start the program and I found compilation error in the execution.
+I add small change in the index.js in backend., to force to 
+
+Now the program work.
+
+-----
 
 ![image](resources/animation.gif)
 

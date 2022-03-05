@@ -31,9 +31,17 @@ console.log("|==================================================================
 
 // application specific configuration settings
 //
+console.log("Init storage")
+console.log("Program storage = (single-user)");
+console.log(program.storage);
+
+console.log("Je change vers un store qui fonctionne");
+
+program.storage = "shared-public";
+//program.storage = "multiple-user";
 const storage = require("./storage/"+program.storage)
 
-
+console.log("Set Body parser")
 // Tell the bodyparser middleware to accept more data
 //
 app.use(bodyParser.json({limit: '50mb'}));
@@ -42,12 +50,14 @@ app.use(bodyParser.urlencoded({limit: '50mb', extended: true}))
 
 // Determine the IP-Address to use for the http server
 //
+console.log("Determine the IP-Address")
 const address = require("./util/network")
 
 
 // check if we want to connect to an Arduino which is connected via USB
 //
 if(program.arduino){
+  console.log("Dans Arduino")
   // Check how many Arduinos are connected to serial port and
   // ask to user which one to use.
   //
@@ -55,6 +65,7 @@ if(program.arduino){
   arduino.init(io, runServer)
 }
 else {
+  console.log("Dans runServer")
   runServer()
 }
 
